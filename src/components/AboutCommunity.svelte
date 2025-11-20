@@ -7,10 +7,13 @@
 
 	let communityTooltip: HTMLAnchorElement;
 
-	$: communityTooltip &&
+	$: {
+	if (communityTooltip) {
 		tippy([communityTooltip], {
 			content: community.tags.name
 		});
+	}
+}
 </script>
 
 <a bind:this={communityTooltip} href={resolve(`/community/${community.id}`)}>

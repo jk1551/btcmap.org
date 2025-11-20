@@ -101,7 +101,7 @@
 	}
 
 	// alert for map errors
-	$: $placesError && errToast($placesError);
+	$: if ($placesError) errToast($placesError);
 
 	onMount(async () => {
 		if (browser) {

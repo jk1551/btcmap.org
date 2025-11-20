@@ -71,15 +71,15 @@
 	import { resolve } from '$app/paths';
 
 	// alert for user errors
-	$: $userError && errToast($userError);
+	$: if($userError) errToast($userError);
 	// alert for event errors
-	$: $eventError && errToast($eventError);
+	$: if($eventError) errToast($eventError);
 	// alert for element errors
-	$: $placesError && errToast($placesError);
+	$: if($placesError) errToast($placesError);
 	// alert for area errors
-	$: $areaError && errToast($areaError);
+	$: if($areaError) errToast($areaError);
 	// alert for report errors
-	$: $reportError && errToast($reportError);
+	$: if($reportError) errToast($reportError);
 
 	let dataInitialized = false;
 	let initialRenderComplete = false;
